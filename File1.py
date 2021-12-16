@@ -10,22 +10,20 @@ def Txt():
     os.system('start notepad.exe TxtFile.txt')
 
 def Graphic():
-    img = Image.open('graphic.png')
+    img = Image.open('Graphic.png')
     img.show()
 
 def Tablica():
-    img = Image.open('tablica.png')
+    img = Image.open('Tablica.png')
     img.show()
 
 def Json():
-    with open('data.json', 'r', encoding='utf8') as f:
-        text = json.load(f)
-        print(text)
+    os.system('start notepad.exe TxtFile.json')
         
 
 
 root = Tk()
-root.geometry('800x600')
+root.geometry('200x150')
 
 def main(event):
     MainFrame = Frame(root)
@@ -35,32 +33,32 @@ def main(event):
     TextBox.pack(fill=BOTH)
 
 button = Button(text = 'Таблиця excel', command=Excel)
-button.pack()
+button.place(x=1, y=1)
 
 
 
 button2 = Button(text = 'Текстовий документ', command=Txt)
-button2.pack()
+button2.place(x=1, y=25)
 
 
 
 button3 = Button(text = 'Файл JSON (вивід у термінал)', command=Json)
-button3.pack()
+button3.place(x=1, y=50)
 
 
 
 button4 = Button(text = 'Графік проекту', command=Graphic)
-button4.pack()
+button4.place(x=1, y=75)
 
 
 button5 = Button(text = 'Таблиця', command=Tablica)
-button5.pack()
+button5.place(x=1, y=100)
 
 
 button6 = Button(text="Вийти", command=lambda: quit_program())
 def quit_program():
     root.destroy()
-button6.pack()
+button6.place(x=1, y=125)
 root.mainloop()
 
 root.mainloop()
